@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="hot-deal.png" type="image/x-icon" />
+    <script defer src="script.js"></script>
+    <title>Keyboard Rush</title>
+  </head>
+  <body>
+    <div id="navbar">
+      <div class="nav-head">
+        <img src="hot-deal.png" class="logo" /> Keyboard Rush <button id="ham" onclick="list()">&equiv;</button>
+      </div id="lists">
+      <li class="lists"><a href="./index.html">Home</a></li>
+      <li class="lists"><a href="./menu.html">Menu</a></li>
+      <li class="lists"><a href="http://kaiblaze.c1.biz/">About</a></li>
+      <li class="lists"><a href="https://github.com/kaiblaze-afk">Contact</a></li>
+    </div>
+    <div id="home">
+      <div id="box">
+        <div id="screen">
+          <p id="label">Typing Speed Test</p>
+          <h1 id="scrhead">Test Your Typing skills</h1>
+          <div id="monitor">
+            <div class="cover" id="time">
+              <div id="timer" class="options"></div>
+              sec
+            </div>
+            <div class="cover">
+              <div id="wpm" class="options">0</div>
+              Words/min
+            </div>
+            <div class="cover" id="char">
+              <div id="cpm" class="options">0</div>
+              Char/min
+            </div>
+            <div class="cover" id="acc">
+              <div id="accu" class="options">
+                0
+                <p>%</p>
+              </div>
+              Accuracy
+            </div>
+          </div>
+        </div>
+        <input
+          type="text"
+          class="inputonce"
+          id="Back"
+          value=""
+          readonly
+        />
+        <input type="text" class="inputonce" id="Input" autofocus />
+      </div>
+    </div>
+  </body>
+</html>

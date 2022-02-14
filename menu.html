@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="hot-deal.png" type="image/x-icon" />
+    <script defer src="menu.js"></script>
+    <title>Keyboard Rush</title>
+</head>
+<body>
+    <div id="navbar">
+        <div class="nav-head">
+          <img src="hot-deal.png" class="logo" /> Keyboard Rush <button id="ham" onclick="list()">&equiv;</button>
+        </div id="lists">
+        <li class="lists"><a href="./index.html">Home</a></li>
+        <li class="lists"><a href="./main.html">Main</a></li>
+        <li class="lists"><a href="http://kaiblaze.c1.biz/">About</a></li>
+        <li class="lists"><a href="https://github.com/kaiblaze-afk">Contact</a></li>
+      </div>
+      <div id="home">
+        <div id="box">
+          <div id="screen">
+              <h1>Settings</h1>
+              <p>Time Limit is set as <b id="timeset"></b> min</p>
+            <input type="range" min="1" max="10" class="timelimit" id="timelimit" onchange="timingchange()" value="1"><br>
+            <p class="na">Dark Mode  </p><img src="moon.png" alt="" class="ico" id="moon" onclick="darkmode()">
+            <p class="na">Blind Mode </p><img src="hide.png" alt="" class="ico" id="hide" onclick="blindmode()">
+      </div>
+</body>
+</html>
