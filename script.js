@@ -7,7 +7,7 @@ let accu = document.getElementById("accu");
 let score = 0;
 let scor = 0;
 let total = 0;
-let timemax = localStorage.getItem("countlocal")*60 || 60;
+let timemax = localStorage.getItem("countlocal") * 60 || 60;
 let nums = random();
 for (let i = 1; i <= 13; i++) {
   nums = nums + " " + random();
@@ -28,13 +28,13 @@ function random() {
 timer.innerHTML = timemax;
 function maintimer() {
   if (timer.innerHTML == timemax) {
-    for (let counter = timemax-1; counter >= 0; counter = counter - 1) {
+    for (let counter = timemax - 1; counter >= 0; counter = counter - 1) {
       setTimeout(function () {
-        counter = timemax-1 - counter;
+        counter = timemax - 1 - counter;
         timer.innerHTML = counter;
-        if (counter == timemax/4) {
+        if (counter == timemax / 4) {
           timer.style.cssText = "border:3px solid red;";
-        } else if (counter == timemax/2) {
+        } else if (counter == timemax / 2) {
           timer.style.cssText = "border:3px solid yellow;";
         } else if (counter == 0) {
           Input.setAttribute("readonly", "true");
@@ -45,11 +45,11 @@ function maintimer() {
           if (accu.innerText <= 60) {
             Input.value = "You should learn alphabets first";
           } else {
-            if (wpm.innerText <= timemax/6) {
+            if (wpm.innerText <= timemax / 6) {
               Input.value = "You Must have started learning just now..";
-            } else if (wpm.innerText <= timemax/4) {
+            } else if (wpm.innerText <= timemax / 4) {
               Input.value = "You are a beginner now, a long way to go..";
-            } else if (wpm.innerText <= timemax/2) {
+            } else if (wpm.innerText <= timemax / 2) {
               Input.value = "Its not that bad but You can do better..";
             } else if (wpm.innerText <= timemax) {
               Input.value = "You are doing great..";
@@ -102,14 +102,15 @@ Input.onkeydown = function (event) {
     if (board.value.split(" ")[0] == Input.value) {
       scor = board.value.split(" ")[0].length + scor;
     }
-    accu.innerHTML = ((scor * 100) / total).toFixed(1);
-    if (accu.innerHTML == 100.0) {
-      accu.innerHTML = 100;
-    }
+
     event.preventDefault();
     if (timer.innerHTML == 0 || timer.innerHTML == timemax) {
       return false;
     } else {
+      accu.innerHTML = ((scor * 100) / total).toFixed(1);
+      if (accu.innerHTML == 100.0) {
+        accu.innerHTML = 100;
+      }
       score = score + Input.value.length + 1;
       wpm.innerHTML = score / 5;
       cpm.innerHTML = score;
@@ -119,15 +120,36 @@ Input.onkeydown = function (event) {
 };
 
 if (localStorage.getItem("blindmode") == "true") {
-  Input.style.color="#0000"
+  Input.style.color = "#0000";
 } else {
-  Input.style.color="rgb(0, 102, 255)"
+  Input.style.color = "rgb(0, 102, 255)";
 }
-if(localStorage.getItem("darkmode")== "true"){
-  document.getElementById("home").style.cssText="background:rgba(0, 0, 0, 0.563);color:white;"
-  document.getElementById("box").style.cssText="background:rgba(0, 0, 0, 0.563);box-shadow: 3px 3px 5px black;"
-  document.getElementById("monitor").style.cssText="color:black"
-}else{
-  document.getElementById("home").style.cssText="background:rgba(255, 255, 255, 0.563);color:black;"
-  document.getElementById("box").style.cssText="background:rgba(255, 255, 255, 0.563);box-shadow: 3px 3px 5px grey;"
+if (localStorage.getItem("darkmode") == "true") {
+  document.getElementById("home").style.cssText =
+    "background:rgba(0, 0, 0, 0.563);color:white;";
+  document.getElementById("box").style.cssText =
+    "background:rgba(0, 0, 0, 0.563);box-shadow: 3px 3px 5px black;";
+  document.getElementById("monitor").style.cssText = "color:white";
+  document.getElementById("timer").style.cssText =
+    "background:rgba(0, 0, 0, 0);color:white;";
+  document.getElementById("wpm").style.cssText =
+    "background:rgba(0, 0, 0, 0.35);color:white;";
+  document.getElementById("cpm").style.cssText =
+    "background:rgba(0, 0, 0, 0.35);color:white;";
+  document.getElementById("accu").style.cssText =
+    "background:rgba(0, 0, 0, 0.35);color:white;";
+} else {
+  document.getElementById("home").style.cssText =
+    "background:rgba(255, 255, 255, 0.563);color:black;";
+  document.getElementById("box").style.cssText =
+    "background:rgba(255, 255, 255, 0.563);box-shadow: 3px 3px 5px grey;";
+  document.getElementById("monitor").style.cssText = "color:black";
+  document.getElementById("timer").style.cssText =
+    "background:rgba(0, 0, 0, 0);color:black;";
+  document.getElementById("wpm").style.cssText =
+    "background:rgba(255,255,255, 0.35);color:black;";
+  document.getElementById("cpm").style.cssText =
+    "background:rgba(255,255,255, 0.35);color:black;";
+  document.getElementById("accu").style.cssText =
+    "background:rgba(255,255,255, 0.35);color:black;";
 }
