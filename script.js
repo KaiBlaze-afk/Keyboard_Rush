@@ -33,9 +33,9 @@ function maintimer() {
         counter = timemax - 1 - counter;
         timer.innerHTML = counter;
         if (counter == timemax / 4) {
-          timer.style.cssText = "border:3px solid red;";
+          timer.style.border = "3px solid red;";
         } else if (counter == timemax / 2) {
-          timer.style.cssText = "border:3px solid yellow;";
+          timer.style.border = "3px solid yellow;";
         } else if (counter == 0) {
           Input.setAttribute("readonly", "true");
           board.style.display = "none";
